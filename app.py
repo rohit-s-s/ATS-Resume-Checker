@@ -7,7 +7,7 @@ app = Flask(__name__)
 def home():
     if request.method == "POST":
         resume = request.files["resume"]
-        job_desc = request.files["job_desc"]
+        job_desc = request.files["job-description"]
         result = calculateScore(resume,job_desc)
         score,present,missing,extra = result
         print(score)

@@ -4,19 +4,11 @@
 }
 
 :root{
-  --text-color:#002d6b;
-  --bg-color:#f6f5f0;
   --color1:rgb(217, 237, 233);
   --color2:rgb(0, 133, 108);
-}
-
-@media  screen and (max-width:1000px) {
-  .formElm div{
-    flex-direction: column;
-  }
-  .container{
-    padding: 30px;
-  }
+  --color3:#002d6b;
+  --color4:#f6f5f0;
+  
 }
 
 body {
@@ -25,17 +17,16 @@ body {
   align-items: center;
   height: 100%;
   width: 100%;
-  background-color: var(--color1);
+  background-color:var(--color4);
   font-family: 'Nunito',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
+
 .container{
   height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--color1);
-    
 }
 
 .file-upload-wrapper{
@@ -62,7 +53,7 @@ body {
 h1{
     font-size: 54px;
     margin: 0 0 16px;
-    color: var(--text-color);
+    color: var(--color3);
     font-family: 'Domine', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
@@ -106,6 +97,7 @@ h3{
   button{
     background-color: white;
     color: var(--color2);
+    border: 1px solid var(--color2);
   }
 
   .chakra-button:hover, button:hover{
@@ -122,14 +114,26 @@ h3{
   }
 
   textarea{
-    padding: 5px 10px !important;
+    padding: 10px 15px !important;
     width: 90%;
     resize: none;
     border-radius: 6px;
     border: 1px solid black;
+    outline: none;
   }
 
-.text-description{
+.textarea-label{
     text-align: center;
+    font-size: 1.17em;
+    font-weight: bold;
   }
 
+
+@media screen and (max-width: 1000px) {
+  .formElm div {
+    flex-direction: column;
+  }
+  .container {
+    padding: 40px;
+  }
+}
