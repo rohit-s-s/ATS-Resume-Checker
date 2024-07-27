@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/home.css') }}"
+    />
+    <title>ATS Resume Checker</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>ATS Checker</h1>
+      <form class="formElm" enctype="multipart/form-data" method="post">
+        <div>
+          <div class="file-upload-wrapper">
+            <i class="fa-solid fa-file-arrow-up"></i>
+            <h3>Upload your Resume PDF here</h3>
+            <label class="chakra-button">Upload Resume</label>
+            <input
+              type="file"
+              id="resume-upload"
+              class="resume-upload"
+              accept="application/pdf"
+              name="resume"
+              required
+            />
+          </div>
+          <div class="file-upload-wrapper">
+            <label class="description" for="job_text"><h3>Paste Job description here</h3>
+              <textarea rows="4" name="job_desc" id="job_text"></textarea>
+            </label>
+            <h3>OR</h3>
+            <label class="chakra-button">Upload Job Description</label>
+            <input
+              type="file"
+              id="desc-upload"
+              class="desc-upload"
+              accept="application/pdf"
+              name="job_desc"
+              required
+            />
+          </div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+  <script>
+    const inputResume = document.getElementById("resume-upload");
+    const label1 = document.querySelectorAll(".chakra-button")[0];
+
+    label1.addEventListener("click", () => {
+      inputResume.click();
+    });
+
+    const inputDesc = document.getElementById("desc-upload");
+    const label2 = document.querySelectorAll(".chakra-button")[1];
+
+    label2.addEventListener("click", () => {
+      inputDesc.click();
+    });
+  </script>
+</html>

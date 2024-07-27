@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Output</title>
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='styles/output.css') }}"
+  />
+</head>
+<body>
+  <div class="container">
+    <h1>Your Resume Check Score</h1>
+    <div class="dashboard">
+      <svg>
+        <circle class="bg" cx="57" cy="57" r="52"></circle>
+        <circle class="meter" cx="57" cy="57" r="52"></circle>
+      </svg>
+      <text x="57" y="57" text-anchor="middle" dy=".3em" class="value">0%</text>
+    </div>
+    <p id="result"></p>
+    <!-- <div class="keyword">
+      <div>
+        <p>Keywords present in your resume are:</p>
+        <ul>
+          {% for x in present %}
+          <li>{{ x }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <p>Keywords needed to be included are:</p>
+        <ul>
+          {% for x in missing %}
+          <li>{{ x }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <p>Additional Keywords included are:</p>
+        <ul>
+          {% for x in extra %}
+          <li>{{ x }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div> -->
+  </div>
+</body>
+<script>
+  let targetValue = {{ score }};
+</script>
+<script src="{{ url_for('static', filename='script/output.js') }}"></script>
+</html>
