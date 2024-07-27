@@ -24,8 +24,8 @@ def output():
     pre = present.split(",")
     abs = missing.split(",")
     add = extra.split(",")
-    # return render_template("output.html",score=sc, present = pre, missing=abs, extra=add)
-    return render_template("output.html",score=sc)
+    return render_template("output.html",score=sc, present = pre, missing=abs, extra=add)
+    
 
 if __name__ == "__main__":
     app.run(debug=True)

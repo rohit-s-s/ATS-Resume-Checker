@@ -24,7 +24,7 @@ document.styleSheets[0].insertRule(`
 `, document.styleSheets[0].cssRules.length);
 
 // Start the progress animation
-document.querySelector('.meter').style.animation = 'progress-animation 3s ease-out forwards';
+document.querySelector('.meter').style.animation = 'progress-animation 2s ease-out forwards';
 
 updateText();
 
